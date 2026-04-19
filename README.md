@@ -1,4 +1,4 @@
-# 🛡️ ADBG — Advanced Anti-Debugging & Syscall Library
+# ADBG — Advanced Anti-Debugging & Syscall Library
 
 ADBG is a low-level Windows anti-debugging and anti-analysis library built using NT internals, direct syscalls, and execution-level tricks.
 
@@ -12,9 +12,9 @@ It is designed to detect, disrupt, and prevent:
 
 ---
 
-## ⚙️ Core Capabilities
+##  Core Capabilities
 
-### 🔍 Debugger Detection
+###  Debugger Detection
 
 * PEB checks (`BeingDebugged`, `NtGlobalFlag`)
 * Debug object & debug port detection
@@ -25,7 +25,7 @@ It is designed to detect, disrupt, and prevent:
 
 ---
 
-### 🧠 Breakpoint Detection
+###  Breakpoint Detection
 
 * Hardware breakpoints (DR0–DR7)
 * Page exception breakpoints
@@ -35,7 +35,7 @@ It is designed to detect, disrupt, and prevent:
 
 ---
 
-### ⚡ Direct Syscalls Engine
+###  Direct Syscalls Engine
 
 * Hash-based syscall resolution
 * Dynamic export parsing from `ntdll`
@@ -49,7 +49,7 @@ DbgNtQuerySystemInformation(...);
 
 ---
 
-### 🧵 Thread & Execution Control
+###  Thread & Execution Control
 
 * Native thread creation (`NtCreateThreadEx`)
 * Hidden threads (`ThreadHideFromDebugger`)
@@ -58,35 +58,35 @@ DbgNtQuerySystemInformation(...);
 
 ---
 
-### 🧬 Anti-Attach Protection (Advanced)
+###  Anti-Attach Protection (Advanced)
 
 One of the strongest parts of this library.
 
-#### ✔ TLS Callback Protection
+####  TLS Callback Protection
 
 * Executes before `main()`
 * Detects debugger attach via thread injection
 
-#### ✔ `DbgUiRemoteBreakin` Detection
+####  `DbgUiRemoteBreakin` Detection
 
 * Scans thread start addresses
 * Terminates if debugger attach thread is detected
 
-#### ✔ Runtime Patching
+####  Runtime Patching
 
 * Hooks:
 
   * `DbgUiRemoteBreakin` → redirected to `__fastfail`
   * `DbgBreakPoint` → patched to `ret`
 
-#### ✔ Hardware Breakpoint Reset
+####  Hardware Breakpoint Reset
 
 * Enumerates all threads
 * Clears DR registers across process
 
 ---
 
-### 🚨 Exception-Based Detection
+###  Exception-Based Detection
 
 * Vectored exception handler (`handler.c`)
 * Detects:
@@ -101,7 +101,7 @@ LONG CALLBACK VectoredDebuggerCheck(...)
 
 ---
 
-### 🧠 Memory & Integrity
+###  Memory & Integrity
 
 * `MEM_WRITE_WATCH` detection
 * Module CRC verification (`hasher.c`)
@@ -110,7 +110,7 @@ LONG CALLBACK VectoredDebuggerCheck(...)
 
 ---
 
-### 🖥️ Environment Detection
+###  Environment Detection
 
 * Debugger window detection (x64dbg, WinDbg, etc.)
 * Job object detection (sandboxing)
@@ -119,7 +119,7 @@ LONG CALLBACK VectoredDebuggerCheck(...)
 
 ---
 
-### ⏱️ Timing & Behavior
+###  Timing & Behavior
 
 * RDTSC timing checks
 * Execution delay detection
@@ -127,7 +127,7 @@ LONG CALLBACK VectoredDebuggerCheck(...)
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 /core
@@ -166,7 +166,7 @@ LONG CALLBACK VectoredDebuggerCheck(...)
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 ### Initialize Protection (Recommended)
 
@@ -207,7 +207,7 @@ HANDLE hThread = DbgCreateThread(
 
 ---
 
-## ⚡ Design Philosophy
+##  Design Philosophy
 
 ### 1. Syscall-first
 
@@ -227,7 +227,7 @@ Uses `__fastfail()` to immediately terminate.
 
 ---
 
-## ⚠️ Limitations
+##  Limitations
 
 * Windows-only (NT-based)
 * Some techniques may trigger:
@@ -250,7 +250,7 @@ Do not use for malicious purposes.
 
 ---
 
-## 📌 Future Work
+##  Future Work
 
 * Hypervisor detection
 * ETW bypass
@@ -260,7 +260,7 @@ Do not use for malicious purposes.
 
 ---
 
-## 🧪 Debug Mode
+##  Debug Mode
 
 Compile with `_DEBUG`:
 
@@ -270,6 +270,6 @@ Compile with `_DEBUG`:
 
 ---
 
-## 📜 License
+##  License
 
 MIT / Custom
