@@ -238,7 +238,7 @@ Uses `__fastfail()` to immediately terminate.
 
 ---
 
-## 🔐 Disclaimer
+##  Disclaimer
 
 This project is intended for:
 
