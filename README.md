@@ -1,4 +1,4 @@
-# ADBG — Advanced Anti-Debugging & Syscall Library
+# ADBG - Advanced Anti-Debugging & Syscall Library
 
 ADBG is a low-level Windows anti-debugging and anti-analysis library built using NT internals, direct syscalls, and execution-level tricks.
 
